@@ -25,22 +25,22 @@ jobs:
       - name: Build and Push Document Service
         run: |
           cd document-service
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/documentservice:latest .
-          docker push ${{ secrets.DOCKER_USERNAME }}/documentservice:latest
+          docker build -t pengbindi/document-service:latest .
+          docker push pengbindi/document-service:latest
 
       # Step 4: 构建并推送 gateway-service 镜像
       - name: Build and Push Gateway Service
         run: |
           cd gateway-service
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/gatewayservice:latest .
-          docker push ${{ secrets.DOCKER_USERNAME }}/gatewayservice:latest
+          docker build -t pengbindi/gateway-service:latest .
+          docker push pengbindi/gateway-service:latest
 
       # Step 5: 构建并推送 user-service 镜像
       - name: Build and Push User Service
         run: |
           cd user-service
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/userservice:latest .
-          docker push ${{ secrets.DOCKER_USERNAME }}/userservice:latest
+          docker build -t pengbindi/user-service:latest .
+          docker push pengbindi/user-service:latest
 
       # Step 6: 配置 kubectl
       - name: Set up kubectl
